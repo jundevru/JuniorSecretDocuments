@@ -8,7 +8,7 @@ namespace SecretCore
 {
     public interface IDocumentEncoder
     {
-        byte[] Encrypt(string text);
-        string Decrypt(byte[] data);
+        byte[] Encrypt(byte[] data, int key);
+        byte[] Decrypt(byte[] data, int key);
     }
 }
