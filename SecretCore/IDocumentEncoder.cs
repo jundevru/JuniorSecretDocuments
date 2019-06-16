@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SecretCore
 {
-    public class Class1
+    public interface IDocumentEncoder
     {
+        byte[] Encrypt(string text);
+        string Decrypt(byte[] data);
     }
 }
