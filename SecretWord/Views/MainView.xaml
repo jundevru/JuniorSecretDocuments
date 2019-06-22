@@ -13,6 +13,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBox Grid.Row="1" Text="{Binding Doc.Text}" AcceptsReturn="True" TextWrapping="WrapWithOverflow"/>
+            <Button Content="Test" Command="{Binding TestClick}"/>
         </Grid>
     </Border>
 </Window>

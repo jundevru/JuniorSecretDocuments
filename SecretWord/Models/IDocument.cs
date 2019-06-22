@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecretWord
+namespace SecretWord.Models
 {
     interface IDocument
     {
         string Text { get; set; }
-
     }
 }

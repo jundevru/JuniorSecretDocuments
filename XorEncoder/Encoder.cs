@@ -9,7 +9,7 @@ namespace XorEncoder
 {
     public class Encoder : IDocumentEncoder
     {
-
+        public string Name => "XOR Encoder";
         public byte[] Decrypt(byte[] data, int key)
         {
             return CodingDecoding(data, GetKeys(key));
