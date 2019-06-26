@@ -38,7 +38,7 @@ namespace SecretWord.Models
             ObservableCollection<Encoder> res = new ObservableCollection<Encoder>();
             DirectoryInfo di = new DirectoryInfo(pluginsDirectory);
             if (!di.Exists)
-                return null;
+                di.Create();
             foreach(FileInfo fi in di.GetFiles("*.dll"))
             {
                 try

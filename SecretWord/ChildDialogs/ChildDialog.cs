@@ -39,6 +39,7 @@ namespace SecretWord.ChildDialogs
             Type viewType = Type.GetType(viewTypeName);
             View = Activator.CreateInstance(viewType) as UserControl;
             #endregion
+            Title = title;
             View.DataContext = viewModel;
             ChildDialogWindow cdw = new ChildDialogWindow();
             cdw.DataContext = this;

@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="{Binding Title}" 
         SizeToContent="WidthAndHeight" 
-        MinHeight="40" MinWidth="100">
+        MinHeight="40" MinWidth="200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

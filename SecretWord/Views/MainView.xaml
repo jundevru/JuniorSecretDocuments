@@ -12,8 +12,12 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <WrapPanel>
+                <Button Content="N" Command="{Binding NewDocument}"/>
+                <Button Content="L" Command="{Binding LoadDocument}"/>
+                <Button Content="S" Command="{Binding SaveDocument}"/>
+            </WrapPanel>
             <TextBox Grid.Row="1" Text="{Binding Doc.Text}" AcceptsReturn="True" TextWrapping="WrapWithOverflow"/>
-            <Button Content="Test" Command="{Binding TestClick}"/>
         </Grid>
     </Border>
 </Window>

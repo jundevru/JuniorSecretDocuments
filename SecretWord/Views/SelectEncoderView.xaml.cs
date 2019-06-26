@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SecretWord.Views
 {
     /// <summary>
-    /// Логика взаимодействия для TestView.xaml
+    /// Логика взаимодействия для SelectEncoderView.xaml
     /// </summary>
-    public partial class TestView : UserControl
+    public partial class SelectEncoderView : UserControl
     {
-        public TestView()
+        public SelectEncoderView()
         {
             InitializeComponent();
         }

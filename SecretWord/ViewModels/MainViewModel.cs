@@ -20,10 +20,39 @@ namespace SecretWord.ViewModels
         public static readonly DependencyProperty DocProperty =
             DependencyProperty.Register("Doc", typeof(IDocument), typeof(MainViewModel), new PropertyMetadata(null));
 
-        public ICommand TestClick => new CommandsDelegate( (obj) => {
-            TestViewModel tvm = new TestViewModel();
-            ChildDialogs.ChildDialog cd = new ChildDialogs.ChildDialog("123", tvm);
-            Doc.Text = tvm.Text + ", " + cd.DialogResult;
+
+        public ICommand NewDocument => new CommandsDelegate((obj) => {
+            Doc = new Models.Document("Новый документ");
+            });
+
+        public ICommand LoadDocument => new CommandsDelegate((obj) => {
+            SelectEncoderViewModel sevm = new SelectEncoderViewModel();
+            ChildDialogs.ChildDialog cd = new ChildDialogs.ChildDialog("Декодирование документа", sevm);
+            if (cd.DialogResult != true 
+                || sevm.SelectedEncoder == null)
+                    return;
+
+            throw new NotImplementedException();
+
+            Streams.ISecretStream filestream = new Streams.SecretFileStream(System.Environment.CurrentDirectory);
+            Doc = filestream.Load(sevm.SelectedEncoder.GetEncoder(), sevm.EncodeKey);
+            if (Doc == null)
+                Doc = new Models.Document("Ошибка загрузки файла...");
+
+        });
+
+        public ICommand SaveDocument => new CommandsDelegate((obj) => {
+            SelectEncoderViewModel sevm = new SelectEncoderViewModel();
+            ChildDialogs.ChildDialog cd = new ChildDialogs.ChildDialog("Кодирование документа", sevm);
+            if (cd.DialogResult != true
+                || sevm.SelectedEncoder == null)
+                return;
+
+            throw new NotImplementedException();
+
+            Streams.ISecretStream filestream = new Streams.SecretFileStream(System.Environment.CurrentDirectory);
+            if (!filestream.Save(Doc, sevm.SelectedEncoder.GetEncoder(), sevm.EncodeKey))
+                MessageBox.Show("Ошибка сохранения файла");
         });
 
 
