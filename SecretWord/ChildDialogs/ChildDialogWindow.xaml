@@ -8,13 +8,24 @@
         WindowStartupLocation="CenterScreen"
         Title="{Binding Title}" 
         SizeToContent="WidthAndHeight" 
-        MinHeight="40" MinWidth="200">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <Button x:Name="oKay" IsDefault="True" Grid.Row="1" Content="OK" HorizontalAlignment="Right" MinWidth="50"/>
-        <ContentPresenter Content="{Binding View}"/>
-    </Grid>
+        MinHeight="40" 
+        MinWidth="200"
+        Style="{StaticResource WindowStyle}">
+    <Border Style="{StaticResource MainBorderStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource HeaderBorderStyle}">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding Title}"/>
+                    <Button x:Name="CloseButton" DockPanel.Dock="Right" HorizontalAlignment="Right" Content="{StaticResource IconCloseWin}" Style="{StaticResource SmallButtonStyle}"/>
+                </DockPanel>
+            </Border>
+            <Button x:Name="oKay" IsDefault="True" Grid.Row="2" Content="OK" HorizontalAlignment="Right" MinWidth="50"/>
+            <ContentPresenter Content="{Binding View}" Grid.Row="1"/>
+        </Grid>
+    </Border>
 </Window>

@@ -22,6 +22,7 @@ namespace SecretWord.ChildDialogs
         public ChildDialogWindow()
         {
             InitializeComponent();
+            CloseButton.Click += (s, e) => Close();
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SecretWord.Dictinaryes">
+
+
+    <SolidColorBrush x:Key="WindowBackgroundColor" Color="#FF9CFF98"/>
+    <SolidColorBrush x:Key="WindowBorderColor" Color="#FF818181"/>
+    <SolidColorBrush x:Key="WindowHeaderBackGroundColor" Color="#FF32B02D"/>
+    <SolidColorBrush x:Key="TextContentColor" Color="Black"/>
+    <SolidColorBrush x:Key="DisableBackgroundColor" Color="LightGray"/>
+    <SolidColorBrush x:Key="ControlFillColor" Color="#FF727272"/>
+
+
+</ResourceDictionary>

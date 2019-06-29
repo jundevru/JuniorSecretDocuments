@@ -28,7 +28,8 @@ namespace SecretWord.Streams
             using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
                 byte[] data = Encoding.Unicode.GetBytes(document.Text);
-                fs.Write(data, 0, data.Length);
+                byte[] data1 = encoder.Encrypt(data, key);
+                fs.Write(data1, 0, data1.Length);
                 fs.Close();
             }
             return true;

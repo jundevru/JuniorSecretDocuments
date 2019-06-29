@@ -3,21 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SecretWord"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Border>
+        xmlns:local="clr-namespace:SecretWord"       
+        Title="" 
+        WindowStartupLocation="CenterScreen"
+        Height="350" 
+        Width="525"
+        Style="{StaticResource WindowStyle}">
+    <Border Style="{StaticResource MainBorderStyle}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <WrapPanel>
-                <Button Content="N" Command="{Binding NewDocument}"/>
-                <Button Content="L" Command="{Binding LoadDocument}"/>
-                <Button Content="S" Command="{Binding SaveDocument}"/>
+            <Border Style="{StaticResource HeaderBorderStyle}">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left" Text="Secret Document Test App"/>
+                    <Button x:Name="CloseButton" DockPanel.Dock="Right" Content="{StaticResource IconCloseWin}" Style="{StaticResource SmallButtonStyle}"/>
+                    <Button x:Name="MinimizeButton" DockPanel.Dock="Right" HorizontalAlignment="Right" Content="{StaticResource IconMinimize}" Style="{StaticResource SmallButtonStyle}"/>
+                </DockPanel>
+            </Border>
+            <WrapPanel Grid.Row="1" Margin="2">
+                <Button Command="{Binding NewDocument}" Style="{StaticResource BigButtonStyle}" Content="{StaticResource IconNewDoc}"/>
+                <Button Command="{Binding LoadDocument}" Style="{StaticResource BigButtonStyle}" Content="{StaticResource IconLoadDoc}"/>
+                <Button Command="{Binding SaveDocument}" Style="{StaticResource BigButtonStyle}" Content="{StaticResource IconSaveDoc}"/>
             </WrapPanel>
-            <TextBox Grid.Row="1" Text="{Binding Doc.Text}" AcceptsReturn="True" TextWrapping="WrapWithOverflow"/>
+            <TextBox Margin="2,0,2,2" Grid.Row="2" 
+                     Text="{Binding Doc.Text}" 
+                     AcceptsReturn="True" 
+                     TextWrapping="WrapWithOverflow" 
+                     Style="{StaticResource TextBoxStyle11}"/>
         </Grid>
     </Border>
 </Window>

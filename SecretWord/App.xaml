@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:SecretWord"
              StartupUri="Views/MainView.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictinaryes\BrushesDictionary.xaml"/>
+                <ResourceDictionary Source="Dictinaryes\ImagesDictionary.xaml"/>
+                <ResourceDictionary Source="Dictinaryes\WindowsDictionary.xaml"/>
+                <ResourceDictionary Source="Dictinaryes\ButtonsDictionary.xaml"/>
+                <ResourceDictionary Source="Dictinaryes\ControlsDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -32,9 +32,12 @@ namespace SecretWord.ViewModels
                 || sevm.SelectedEncoder == null)
                     return;
 
-            throw new NotImplementedException();
+            ChildDialogs.IFileDialog loadFileDialog = new ChildDialogs.SecretFileDialog();
+            string fileName = loadFileDialog.Load();
+            if (fileName == "")
+                return;
 
-            Streams.ISecretStream filestream = new Streams.SecretFileStream(System.Environment.CurrentDirectory);
+            Streams.ISecretStream filestream = new Streams.SecretFileStream(fileName);
             Doc = filestream.Load(sevm.SelectedEncoder.GetEncoder(), sevm.EncodeKey);
             if (Doc == null)
                 Doc = new Models.Document("Ошибка загрузки файла...");
@@ -48,9 +51,12 @@ namespace SecretWord.ViewModels
                 || sevm.SelectedEncoder == null)
                 return;
 
-            throw new NotImplementedException();
+            ChildDialogs.IFileDialog saveFileDialog = new ChildDialogs.SecretFileDialog();
+            string fileName = saveFileDialog.Save();
+            if (fileName == "")
+                return;
 
-            Streams.ISecretStream filestream = new Streams.SecretFileStream(System.Environment.CurrentDirectory);
+            Streams.ISecretStream filestream = new Streams.SecretFileStream(fileName);
             if (!filestream.Save(Doc, sevm.SelectedEncoder.GetEncoder(), sevm.EncodeKey))
                 MessageBox.Show("Ошибка сохранения файла");
         });

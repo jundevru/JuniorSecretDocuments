@@ -24,6 +24,9 @@ namespace SecretWord.Views
         {
             InitializeComponent();
             DataContext = new ViewModels.MainViewModel();
+            CloseButton.Click += (s, e) => Close();
+            MinimizeButton.Click += (s, e) => WindowState = WindowState.Minimized;
+            MouseLeftButtonDown += (s, e) => DragMove();
         }
     }
 }
