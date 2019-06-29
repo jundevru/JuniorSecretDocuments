@@ -8,7 +8,7 @@
     <SolidColorBrush x:Key="WindowHeaderBackGroundColor" Color="#FF32B02D"/>
     <SolidColorBrush x:Key="TextContentColor" Color="Black"/>
     <SolidColorBrush x:Key="DisableBackgroundColor" Color="LightGray"/>
-    <SolidColorBrush x:Key="ControlFillColor" Color="#FF727272"/>
-
+    <SolidColorBrush x:Key="ControlFillColor" Color="#FF383838"/>
+    <SolidColorBrush x:Key="MouseOverControlBorderColor" Color="Orange"/>
 
 </ResourceDictionary>

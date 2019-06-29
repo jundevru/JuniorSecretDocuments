@@ -24,7 +24,13 @@
                     <Button x:Name="CloseButton" DockPanel.Dock="Right" HorizontalAlignment="Right" Content="{StaticResource IconCloseWin}" Style="{StaticResource SmallButtonStyle}"/>
                 </DockPanel>
             </Border>
-            <Button x:Name="oKay" IsDefault="True" Grid.Row="2" Content="OK" HorizontalAlignment="Right" MinWidth="50"/>
+            <Button x:Name="oKay" 
+                    Margin="2,2,5,2"
+                    IsDefault="True" 
+                    Grid.Row="2" 
+                    Content="OK" 
+                    HorizontalAlignment="Right" 
+                    MinWidth="50"/>
             <ContentPresenter Content="{Binding View}" Grid.Row="1"/>
         </Grid>
     </Border>
